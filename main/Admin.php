@@ -9,7 +9,7 @@ class Admin {
         $i = 0;
         foreach ($dirs as $dir) {
             if ($dir == '.' || $dir == '..') { continue; }
-            echo '<span style="margin-left:100px; margin-right: 100px;" >'.$dir.'</span><button onclick="visible('.$i.');">編集</button></br><span class="hidden" style="display:none; margin-left:100px; margin-right: 100px;" >';
+            echo '<div style="width:300px;"><span style="margin-left:100px; " >'.$dir.'</span><button style="float: right;" onclick="visible('.$i.');">編集</button></div><span class="hidden" style="display:none; margin-left:100px;" >';
             if (is_dir($dir)) {
                 $dirs2 = scandir($path.'/'.$dir);
                 foreach ($dirs2 as $dir2) {
