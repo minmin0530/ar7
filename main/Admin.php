@@ -2,6 +2,25 @@
 
 class Admin {
     function __construct() {
+
+        echo '<script>function visible(i){ document.getElementsByClassName("hidden")[i].style.display="block"; }</script>';
+        $path = $_SERVER['DOCUMENT_ROOT'];
+        $dirs = scandir($path);
+        $i = 0;
+        foreach ($dirs as $dir) {
+            if ($dir == '.' || $dir == '..') { continue; }
+            echo '<span style="margin-left:100px; margin-right: 100px;" >'.$dir.'</span><button onclick="visible('.$i.');">編集</button></br><span class="hidden" style="display:none; margin-left:100px; margin-right: 100px;" >';
+            if (is_dir($dir)) {
+                $dirs2 = scandir($path.'/'.$dir);
+                foreach ($dirs2 as $dir2) {
+                    if ($dir2 == '.' || $dir2 == '..') { continue; }
+                    echo $dir.'/'.$dir2.'<a href="#">編集</a></br>';
+                }
+            }
+            echo '</span>';
+            $i += 1;
+        }
+
         echo "<h1>管理画面</h1>";
         echo "<h2>記事作成</h2>";
 
