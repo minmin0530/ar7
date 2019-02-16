@@ -6,9 +6,9 @@ if ($params[0] == 'home') {
     include ('./main/Admin.php');
     new Admin();
 }
-if ($params[0] == 'memo') {
-    include ('./main/memo.php');
-}
+//if ($params[0] == 'memo') {
+//    include ('./main/memo.php');
+//}
 
 // $model = array_shift($params);
 
