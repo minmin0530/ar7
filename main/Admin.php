@@ -31,12 +31,10 @@ class Admin {
 
         echo "<h1>管理画面</h1>";
         echo "<h2>記事作成</h2>";
-
-        $filename = './memo.php';
  
 //        include('./admin/editor.html');
 //        include('./admin/createDirectory.html');
-          include('./admin/rename.html');       
- 
+//        include('./admin/rename.html');       
+        include('./admin/permalink.html');
     }
 }
